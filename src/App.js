@@ -2,7 +2,7 @@ import React from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 
-const query = gql`
+const myQuery = gql`
   {
     organization(login: "apollographql") {
       repositories(first: 5, isFork: false) {
@@ -20,7 +20,7 @@ const query = gql`
 `;
 
 const App = () => (
-  <Query query={query}>
+  <Query query={myQuery}>
     {({ loading, data }) => {
       if (loading) return <p>Loading...</p>;
 
